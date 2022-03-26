@@ -71,7 +71,6 @@ mysqli_close($connect);
 
         </div>
 
-
         <div class='mb-5 d-flex justify-content-end'>
             <a href="create.php"><button class=' btn btn-success custom' type="button">Add animal</button></a>
             <a href="update.php"><button class='btn btn-warning custom ms-1 me-1' type="button">Update animal</button></a>
