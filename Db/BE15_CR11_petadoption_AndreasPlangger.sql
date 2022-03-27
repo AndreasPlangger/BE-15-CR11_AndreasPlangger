@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 26, 2022 at 05:38 PM
+-- Generation Time: Mar 27, 2022 at 02:06 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.2
 
@@ -49,14 +49,14 @@ INSERT INTO `animals` (`petID`, `pet_name`, `breed`, `size`, `age`, `pet_descrip
 (5000000, 'Donnashello', 'turtle', 'small', 67, 'Easy going fellow, that takes life in a relaxed manner, never rushes and always keeps a straight face, no matter what life throws at him, he has got a thick skin.', 'eating salad, sleeping', 'Turtleweg 78', 'turtle_640.jpg'),
 (5000001, 'Rabbit DeNiro', 'rabbit', 'small', 5, 'Always energetic, he ll jump on any adventure life has to offer. He s also very affectionate and loves nothing more than digging for love and attention.', 'carrots, digging holes', 'Rabbitstrasse 31', 'rabbit_640.jpg'),
 (5000002, 'Marty McFly', 'bird', 'small', 12, 'Marty is a sweet natured and sensitive dude who\'s had quite a singing career. Now retired, he just wants to chill. He s still got the voice but sometimes can be timid around cats. ', 'flying, singing', 'Birdroad 44', 'parrott_640.jpg'),
-(5000003, 'Fidel Catstro', 'cat', 'small', 6, 'Once settled Fidel is a very gentle and sweet natured boy who will also need a cat flap fitted regardless of working hours so he can have the security to come and go to a nice little garden of his own.', 'sleeping, eating', 'Catweg 98', 'cat_russian_blue.jpg'),
+(5000003, 'Fidel Catstro', 'cat', 'small', 6, 'Once settled, Fidel is a gentle, sweet natured boy who will also need a cat flap fitted regardless of working hours so he can have the security to come and go to a nice garden of his own.', 'sleeping, eating', 'Catweg 98', 'cat_russian_blue.jpg'),
 (5000004, 'Cleocatra', 'cat', 'small', 7, 'Cleocatra is an independent lady who will appreciate someone that gives her the time to find her paws. She is pretty comfortable in her own fur, and while she is a little aloof it doesnt mean she won’t love you.', 'cleaning, hunting', 'Catgasse 25', 'cat_birman.jpg'),
 (5000005, 'Cat Stevens', 'cat', 'small', 9, 'Cat Stevens is a very handsome and inquisitive boy who likes to be part of all the action. He loves his fuss and often pops up on your lap for some extra cuddles and a better view of the world.', 'strolling, hiding', 'Catweg 68', 'cat_scotish.jpg'),
 (5000006, 'Dogstoyevsky', 'dog', 'medium', 8, 'Beautiful, bouncy Dogstoyevsky is an active and excitable male who wants to say HELLO to everyone he meets! Hes confident, outgoing and super playful. Full of energy and always up to something. ', 'barking', 'Hundehaufen 75', 'dog_640.jpg'),
-(5000007, 'Karl Barx', 'dog', 'large', 4, 'Karl is a sensitive chap who is wary of strangers and will sometimes bark at strangers who approach him. Hes a clever chap, too. ', 'reading, contemplating', 'Marxstrasse 41', 'dog_terrier.jpg'),
+(5000007, 'Karl Barx', 'dog', 'large', 4, 'Karl is a sensitive chap who is wary of strangers and will sometimes bark at those who approach him. Once he found trust however, he is a charming, clever chap, supportive of his owner, come hell or high water. ', 'reading, contemplating', 'Marxstrasse 41', 'dog_terrier.jpg'),
 (5000008, 'Woofi Goldberg', 'dog', 'large', 7, 'Woofi is a very friendly and outgoing girl who is super affectionate and very people orientated. Shes responsive to commands but being a typical Frenchie she can need a bit more motivation at times. ', 'running, eating', 'Huskyweg 33', 'dog2_640.jpg'),
-(5000009, 'Tiny', 'elephant', 'very large', 37, 'Tiny is a handsome lad who wants to get to know you first. As soon as he trusts you he is more than happy to be king of the castle and enjoys hanging out. He loves to play and even fishes! ', 'rumbling, weight lifting', 'Elephantroad 83', 'elephant_640.jpg'),
-(5000010, 'Hamilton', 'hamster', 'very small', 14, 'Hamilton is a friendly little fluff ball who will need a chilled out home. He would love to be the centre of attention and really get to know you. He is sweet and enjoys his fuss especially a good head and cheek rub is always welcome.', 'celebrating', 'Hamsterhaus 38', 'hamster_640.jpg');
+(5000009, 'Tiny', 'elephant', 'very large', 37, 'Tiny is a handsome lad who wants to get to know you first. As soon as he trusts you he is more than happy to be king of the castle and enjoys hanging out. He loves to play, lift weights and even fishes! ', 'rumbling, weight lifting', 'Elephantroad 83', 'elephant_640.jpg'),
+(5000010, 'Hamilton', 'hamster', 'very small', 14, 'Hamilton is a friendly little fluff ball who needs a chilled out home. He loves to be the centre of attention. He is sweet and enjoys his fuss especially a good head and cheek rub, is always welcome.', 'celebrating', 'Hamsterhaus 38', 'hamster_640.jpg');
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,8 @@ INSERT INTO `users` (`userID`, `first_name`, `last_name`, `address`, `phone`, `e
 (1000024, 'Diana', 'Rosenstein', 'Rosenstein 89', '0835672277', 'diana_rosenstein@mail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'avatar.png', 'user'),
 (1000025, 'Amanda', 'Hintanda', 'Hintandaweg 9', '0238672277', 'amanda_hintanda@mail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'avatar.png', 'user'),
 (1000026, 'Lea', 'Endell', 'Endellstrasse 79', '0871672277', 'lea_endell@mail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'avatar.png', 'user'),
-(1000027, 'Adi', 'Admin', 'Adminstrasse 99', '0671672477', 'adi_admin@mail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'avatar.png', 'adm');
+(1000027, 'Adi', 'Admin', 'Adminstrasse 99', '0671672477', 'adi_admin@mail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'avatar.png', 'adm'),
+(1000028, 'ben', 'ali', 'benali 3', '789456123', 'ben_ali@mail.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'avatar.png', 'user');
 
 --
 -- Indexes for dumped tables
@@ -136,7 +137,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `animals`
 --
 ALTER TABLE `animals`
-  MODIFY `petID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5000011;
+  MODIFY `petID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5000018;
 
 --
 -- AUTO_INCREMENT for table `pet_adoption`
@@ -148,7 +149,7 @@ ALTER TABLE `pet_adoption`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000028;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000029;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
