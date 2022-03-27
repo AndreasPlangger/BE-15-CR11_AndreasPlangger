@@ -163,7 +163,7 @@ mysqli_close($connect);
             <input type="text" name="first_name" class="form-control" placeholder="First name" maxlength="65" value="<?php echo $fname ?>" />
             <span class="text-danger"> <?php echo $fnameError; ?> </span>
 
-            <input type="text" name="last_name" class="form-control" placeholder="Surname" maxlength="65" value="<?php echo $lname ?>" />
+            <input type="text" name="last_name" class="form-control" placeholder="Last Name" maxlength="65" value="<?php echo $lname ?>" />
             <span class="text-danger"> <?php echo $fnameError; ?> </span>
 
             <input type="text" name="address" class="form-control" placeholder="Address" maxlength="65" value="<?php echo $address ?>" />

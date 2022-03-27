@@ -83,7 +83,7 @@ if ($_GET['petID']) {
                     <td><input class='form-control' type="file" name="picture" /></td>
                 </tr>
                 <tr>
-                    <input type="hidden" name="id" value="<?php echo $data['id'] ?>" />
+                    <input type="hidden" name="petID" value="<?php echo $data['petID'] ?>" />
 
                     <input type="hidden" name="picture" value="<?php echo $data['picture'] ?>" />
                     <td><button class="btn btn-success" type="submit">Save Changes</button></td>
