@@ -17,7 +17,9 @@ if (mysqli_num_rows($result)  > 0) {
             <td>" . $row['age'] . "</td>
             <td>" . $row['pet_description'] . "</td>
             <td>" . $row['hobbies'] . "</td>
-            <td>" . "<a href='details.php?petID=" . $row['petID'] . "'><button class='btn btn-success' type='button'><span class='text-nowrap'>More Info</span></button></a></td>
+            <td>" . $row['pet_address'] . "</td>
+            <td><a href='update.php?petID=" . $row['petID'] . "'><button class='btn btn-warning w-100 mb-2' type='button'><span class='text-nowrap'>Update</span></button></a>
+            <a href='delete.php?petID=" . $row['petID'] . "'><button class='btn btn-danger w-100 mb-2' type='button'><span class='text-nowrap'>Delete</span></button></a></td>
             </tr>";
     };
 } else {
@@ -42,7 +44,7 @@ mysqli_close($connect);
 
         .img-thumbnail {
             width: auto !important;
-            height: 18vh !important;
+            height: 20vh !important;
         }
 
         td {
@@ -72,11 +74,8 @@ mysqli_close($connect);
         </div>
 
         <div class='mb-5 d-flex justify-content-end'>
-            <a href="create.php"><button class=' btn btn-success custom' type="button">Add animal</button></a>
-            <a href="update.php"><button class='btn btn-warning custom ms-1 me-1' type="button">Update animal</button></a>
-            <a href="delete.php"><button class='btn btn-danger custom me-1' type="button">Delete animal</button></a>
+            <a href="create.php"><button class=' btn btn-success custom me-1' type="button">Add animal</button></a>
             <a href="logout.php?logout"><button class='btn btn-primary custom' type="button">Sign Out</button></a>
-
         </div>
         <table class='table table-border table-striped'>
             <thead class='table-success'>
@@ -88,9 +87,8 @@ mysqli_close($connect);
                     <th style='padding-top: 2vh; padding-bottom: 2vh;'>Age</th>
                     <th style='padding-top: 2vh; padding-bottom: 2vh;'>Description</th>
                     <th style='padding-top: 2vh; padding-bottom: 2vh;'>Hobbies</th>
-                    <th style='padding-top: 2vh; padding-bottom: 2vh;'>Details</th>
-
-
+                    <th style='padding-top: 2vh; padding-bottom: 2vh;'>Address</th>
+                    <th style='padding-top: 2vh; padding-bottom: 2vh;'>Actions</th>
                 </tr>
             </thead>
             <tbody>
