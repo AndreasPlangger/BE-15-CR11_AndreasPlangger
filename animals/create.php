@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once 'components/boot.php' ?>
+    <?php require_once '../components/boot.php' ?>
     <title>Add animal</title>
     <style>
         fieldset {
@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                     <td><button class='btn btn-success' type="submit">Insert Animal</button></td>
-                    <td><a href="dashboard.php"><button class='btn btn-warning' type="button">Home</button></a></td>
+                    <td><a href="../dashboard.php"><button class='btn btn-warning' type="button">Home</button></a></td>
                 </tr>
             </table>
         </form>

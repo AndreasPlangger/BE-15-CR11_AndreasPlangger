@@ -18,8 +18,8 @@ if (mysqli_num_rows($result)  > 0) {
             <td>" . $row['pet_description'] . "</td>
             <td>" . $row['hobbies'] . "</td>
             <td>" . $row['pet_address'] . "</td>
-            <td><a href='update.php?petID=" . $row['petID'] . "'><button class='btn btn-warning w-100 mb-2' type='button'><span class='text-nowrap'>Update</span></button></a>
-            <a href='delete.php?petID=" . $row['petID'] . "'><button class='btn btn-danger w-100 mb-2' type='button'><span class='text-nowrap'>Delete</span></button></a></td>
+            <td><a href='animals/update.php?petID=" . $row['petID'] . "'><button class='btn btn-warning w-100 mb-2' type='button'><span class='text-nowrap'>Update</span></button></a>
+            <a href='animals/delete.php?petID=" . $row['petID'] . "'><button class='btn btn-danger w-100 mb-2' type='button'><span class='text-nowrap'>Delete</span></button></a></td>
             </tr>";
     };
 } else {
@@ -74,7 +74,7 @@ mysqli_close($connect);
         </div>
 
         <div class='mb-5 d-flex justify-content-end'>
-            <a href="create.php"><button class=' btn btn-success custom me-1' type="button">Add animal</button></a>
+            <a href="animals/create.php"><button class=' btn btn-success custom me-1' type="button">Add animal</button></a>
             <a href="logout.php?logout"><button class='btn btn-primary custom' type="button">Sign Out</button></a>
         </div>
         <table class='table table-border table-striped'>

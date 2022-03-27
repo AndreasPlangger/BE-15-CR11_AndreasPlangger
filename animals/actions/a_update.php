@@ -1,6 +1,6 @@
 <?php
-require_once '../components/db_connect.php';
-require_once '../components/file_upload.php';
+require_once '../../components/db_connect.php';
+require_once '../../components/file_upload.php';
 
 if ($_POST) {
     $name = $_POST['pet_name'];
@@ -17,7 +17,7 @@ if ($_POST) {
 
     $picture = file_upload($_FILES['picture']); //file_upload() called  
     if ($picture->error === 0) {
-        ($_POST["picture"] == "product.png") ?: unlink("../pictures/$_POST[picture]");
+        ($_POST["picture"] == "product.png") ?: unlink("../../pictures/$_POST[picture]");
         $sql = "UPDATE animals SET name = '$name', '$breed', '$size', age = $age, '$description', '$hobbies', '$address', picture = '$picture->fileName' WHERE petID = {$id}";
     } else {
         $sql = "UPDATE animals SET name = '$name', '$breed', '$size', age = $age, '$description', '$hobbies', '$address' WHERE petID = {$id}";
@@ -33,10 +33,9 @@ if ($_POST) {
     }
     mysqli_close($connect);
 } else {
-    header("location: ../error.php");
+    header("location: ../../error.php");
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +43,7 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <title>Update</title>
-    <?php require_once '../components/boot.php' ?>
+    <?php require_once '../../components/boot.php' ?>
 </head>
 
 <body>
@@ -56,7 +55,7 @@ if ($_POST) {
             <p><?php echo ($message) ?? ''; ?></p>
             <p><?php echo ($uploadError) ?? ''; ?></p>
             <a href='../update.php?id=<?= $id; ?>'><button class="btn btn-warning" type='button'>Back</button></a>
-            <a href='../dashboard.php'><button class="btn btn-success" type='button'>Home</button></a>
+            <a href='../../dashboard.php'><button class="btn btn-success" type='button'>Home</button></a>
         </div>
     </div>
 </body>

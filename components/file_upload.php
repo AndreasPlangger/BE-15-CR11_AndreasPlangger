@@ -23,6 +23,7 @@ function file_upload($picture)
                     //it gives a file name based microseconds
                     $fileNewName = uniqid('') . "." . $fileExtension; // 1233343434.jpg i.e
                     $destination = "../pictures/$fileNewName";
+
                     if (move_uploaded_file($fileTmpName, $destination)) {
                         $result->error = 0;
                         $result->fileName = $fileNewName;

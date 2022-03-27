@@ -1,5 +1,5 @@
 <?php
-require_once 'components/db_connect.php';
+require_once '../components/db_connect.php';
 
 if ($_GET['petID']) {
     $id = $_GET['petID'];
@@ -24,11 +24,11 @@ if ($_GET['petID']) {
             <td>" . $address . "</td>
             </tr>";
     } else {
-        header("location: error.php");
+        header("location: ../error.php");
     }
     mysqli_close($connect);
 } else {
-    header("location: error.php");
+    header("location: ../error.php");
 }
 ?>
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ if ($_GET['petID']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal details</title>
-    <?php require_once 'components/boot.php' ?>
+    <?php require_once '../components/boot.php' ?>
     <style type="text/css">
         .manageProduct {
             margin: auto;
@@ -68,7 +68,7 @@ if ($_GET['petID']) {
 <body>
     <div class="manageProduct mt-3">
         <p class='h2 text-center mt-5 mb-5'> <?= $name ?> </p>
-        <img src="pictures/<?= $picture ?>" class="rounded mx-auto d-block mb-3 " alt="<?= $name ?>" width="250px">
+        <img src="../pictures/<?= $picture ?>" class="rounded mx-auto d-block mb-3 " alt="<?= $name ?>" width="250px">
         <table class='table table-striped'>
             <thead class='table-success text-nowrap'>
                 <tr>
@@ -85,8 +85,8 @@ if ($_GET['petID']) {
             </tbody>
         </table>
         <div class='mb-3 d-flex justify-content-end'>
-            <a href="home.php"><button class='btn btn-success custom me-1' type="button">Take me home</button></a>
-            <a href="home.php"><button class='btn btn-warning custom' type="button">Back</button></a>
+            <a href="../home.php"><button class='btn btn-success custom me-1' type="button">Take me home</button></a>
+            <a href="../home.php"><button class='btn btn-warning custom' type="button">Back</button></a>
 
         </div>
     </div>

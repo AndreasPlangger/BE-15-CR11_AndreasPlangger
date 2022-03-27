@@ -1,5 +1,5 @@
 <?php
-require_once 'components/db_connect.php';
+require_once '../components/db_connect.php';
 
 if ($_GET['petID']) {
     $id = $_GET['petID'];
@@ -16,11 +16,11 @@ if ($_GET['petID']) {
         $address = $data['pet_address'];
         $picture = $data['picture'];
     } else {
-        header("location: error.php");
+        header("location: ../error.php");
     }
     mysqli_close($connect);
 } else {
-    header("location: error.php");
+    header("location: ../error.php");
 }
 ?>
 
@@ -32,7 +32,7 @@ if ($_GET['petID']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Animal</title>
-    <?php require_once 'components/boot.php' ?>
+    <?php require_once '../components/boot.php' ?>
     <style type="text/css">
         fieldset {
             margin: auto;
@@ -49,7 +49,7 @@ if ($_GET['petID']) {
 
 <body>
     <fieldset>
-        <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+        <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='../pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
         <h5>You have selected the animal below:</h5>
         <table class="table w-75 mt-3">
             <tr>
@@ -62,7 +62,7 @@ if ($_GET['petID']) {
             <input type="hidden" name="petID" value="<?php echo $id ?>" />
             <input type="hidden" name="picture" value="<?php echo $picture ?>" />
             <button class="btn btn-danger" type="submit">Yes, delete.</button>
-            <a href="dashboard.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
+            <a href="../dashboard.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
         </form>
     </fieldset>
 </body>

@@ -1,10 +1,10 @@
 <?php
-require_once '../components/db_connect.php';
+require_once '../../components/db_connect.php';
 
 if ($_POST) {
     $id = $_POST['petID'];
     $picture = $_POST['picture'];
-    ($picture == "product.png") ?: unlink("../pictures/$picture");
+    ($picture == "product.png") ?: unlink("../../pictures/$picture");
 
     $sql = "DELETE FROM animals WHERE petID = {$id}";
     if (mysqli_query($connect, $sql) === TRUE) {
@@ -16,7 +16,7 @@ if ($_POST) {
     }
     mysqli_close($connect);
 } else {
-    header("location: ../error.php");
+    header("location: ../../error.php");
 }
 ?>
 
@@ -27,7 +27,7 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <title>Delete</title>
-    <?php require_once '../components/boot.php' ?>
+    <?php require_once '../../components/boot.php' ?>
 </head>
 
 <body>
@@ -37,7 +37,7 @@ if ($_POST) {
         </div>
         <div class="alert alert-<?= $class; ?>" role="alert">
             <p><?= $message; ?></p>
-            <a href='../dashboard.php'><button class="btn btn-success" type='button'>Home</button></a>
+            <a href='../../dashboard.php'><button class="btn btn-success" type='button'>Home</button></a>
         </div>
     </div>
 </body>

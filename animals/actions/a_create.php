@@ -1,6 +1,6 @@
 <?php
-require_once '../components/db_connect.php';
-require_once '../components/file_upload.php';
+require_once '../../components/db_connect.php';
+require_once '../../components/file_upload.php';
 
 if ($_POST) {
     $name = $_POST['pet_name'];
@@ -38,7 +38,7 @@ if ($_POST) {
     }
     mysqli_close($connect);
 } else {
-    header("location: ../error.php");
+    header("location: ../../error.php");
 }
 ?>
 
@@ -49,7 +49,7 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <title>Update</title>
-    <?php require_once '../components/boot.php' ?>
+    <?php require_once '../../components/boot.php' ?>
 </head>
 
 <body>
@@ -60,7 +60,7 @@ if ($_POST) {
         <div class="alert alert-<?= $class; ?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>
             <p><?php echo ($uploadError) ?? ''; ?></p>
-            <a href='../dashboard.php'><button class="btn btn-warning" type='button'>Return to Dashboard</button></a>
+            <a href='../../dashboard.php'><button class="btn btn-warning" type='button'>Return to Dashboard</button></a>
         </div>
     </div>
 </body>

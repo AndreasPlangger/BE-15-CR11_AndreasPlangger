@@ -34,7 +34,7 @@ if (mysqli_num_rows($result)  > 0) {
                     <p class='card-text'>Age: " . $row['age'] . "   </p>
                     <p class='card-text'>Hobbies: " . $row['hobbies'] . "   </p>
                     <p class='card-text'>" . $row['pet_description'] . "   </p>
-                    <span class='d-flex justify-content-center '>" . "<a href='details.php?petID=" . $row['petID'] . "'><button class='btn btn-success' type='button'><span class='text-nowrap'>More Info</span></button></a></span>
+                    <span class='d-flex justify-content-center '>" . "<a href='animals/details.php?petID=" . $row['petID'] . "'><button class='btn btn-success' type='button'><span class='text-nowrap'>More Info</span></button></a></span>
                     </div>
                     </div>
                 </div>";
@@ -128,7 +128,7 @@ mysqli_close($connect);
                 <a href="update.php?id=<?php echo $_SESSION['user'] ?>"><button class='btn btn-primary text-white' type="button">Update your profile</button></a>
             </div>
             <div class=' w-50 mb-4 d-flex justify-content-end' style='margin-top: 4vh; margin-bottom: 2vh;'>
-                <a href="senior.php"><button class='btn btn-success text-white' type="button">Show senior animals only</button></a>
+                <a href="animals/senior.php"><button class='btn btn-success text-white' type="button">Show senior animals only</button></a>
             </div>
         </span>
         <div class='row row-cols-1 row-cols-md-3 row-cols-lg-4 g-5'>

@@ -1,5 +1,5 @@
 <?php
-require_once 'components/db_connect.php';
+require_once '../components/db_connect.php';
 
 if ($_GET['petID']) {
     $id = $_GET['petID'];
@@ -16,11 +16,11 @@ if ($_GET['petID']) {
         $address = $data['pet_address'];
         $picture = $data['picture'];
     } else {
-        header("location: error.php");
+        header("location: ../error.php");
     }
     mysqli_close($connect);
 } else {
-    header("location: error.php");
+    header("location: ../error.php");
 }
 ?>
 
@@ -30,7 +30,7 @@ if ($_GET['petID']) {
 
 <head>
     <title>Edit Product</title>
-    <?php require_once 'components/boot.php' ?>
+    <?php require_once '../components/boot.php' ?>
     <style type="text/css">
         fieldset {
             margin: auto;
@@ -47,7 +47,7 @@ if ($_GET['petID']) {
 
 <body>
     <fieldset>
-        <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+        <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='../pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
         <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
             <table class="table">
                 <tr>
@@ -87,7 +87,7 @@ if ($_GET['petID']) {
 
                     <input type="hidden" name="picture" value="<?php echo $data['picture'] ?>" />
                     <td><button class="btn btn-success" type="submit">Save Changes</button></td>
-                    <td><a href="dashboard.php"><button class="btn btn-warning" type="button">Back</button></a></td>
+                    <td><a href="../dashboard.php"><button class="btn btn-warning" type="button">Back</button></a></td>
                 </tr>
             </table>
         </form>

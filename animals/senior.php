@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'components/db_connect.php';
+require_once '../components/db_connect.php';
 
 $sql = "SELECT * FROM `animals` WHERE age > 8";
 $result = mysqli_query($connect, $sql);
@@ -11,7 +11,7 @@ if (mysqli_num_rows($result)  > 0) {
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $tbody .=
             "<tr>
-            <td><img class='img-thumbnail' src='pictures/" . $row['picture'] . "'</td>
+            <td><img class='img-thumbnail' src='../pictures/" . $row['picture'] . "'</td>
             <td>" . $row['pet_name'] . "</td>
             <td>" . $row['breed'] . "</td>
             <td>" . $row['size'] . "</td>
@@ -35,7 +35,7 @@ mysqli_close($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopt a PET!</title>
-    <?php require_once 'components/boot.php' ?>
+    <?php require_once '../components/boot.php' ?>
     <style type="text/css">
         .manageProduct {
             margin: auto;
@@ -86,15 +86,10 @@ mysqli_close($connect);
         </table>
 
         <div class='mb-3 d-flex justify-content-end'>
-            <a href="home.php"><button class='btn btn-warning custom me-1' type="button">Back</button></a>
+            <a href="../home.php"><button class='btn btn-warning custom me-1' type="button">Back</button></a>
         </div>
 
     </div>
-
-
-    <!-- <td><a href='update.php?id=" . $row['id'] . "'><button class='btn btn-primary btn-sm custom' type='button'>Edit</button></a>
-            <a href='delete.php?id=" . $row['id'] . "'><button class='btn btn-danger btn-sm custom' type='button'>Delete</button></a></td> -->
-
 </body>
 
 </html>
