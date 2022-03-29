@@ -66,9 +66,12 @@ mysqli_close($connect);
                 max-width: 1420px !important;
             }
 
-            .userImage {
-                width: auto;
-                height: 100px;
+            .img-thumbnail {
+                width: 12rem !important;
+                height: 12rem !important;
+                position: absolute;
+                margin-top: 4vh;
+                margin-left: 1vw;
             }
 
             .container {
@@ -114,8 +117,8 @@ mysqli_close($connect);
 
 
     <div class="manageProduct w-75 mt-3">
-
         <div class="container m-0 p-0">
+            <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $rowu['picture'] ?>' alt="<?php echo $rowu['first_name'] ?>">
             <div class="hero d-flex flex-column align-items-center">
                 <p class='h1 mt-5 text-center' style='padding-top: 2vh; padding-bottom: 1vh;'>Hi <?php echo $rowu['first_name']; ?> ! </p>
                 <p class='h3 text-center' style='padding-top: 1vh; padding-bottom: 2vh;'>Meet your new best friend!</p>

@@ -1,6 +1,7 @@
 <?php
 require_once '../components/db_connect.php';
 
+
 if ($_GET['petID']) {
     $id = $_GET['petID'];
     $sql = "SELECT * FROM animals WHERE petID = {$id}";
@@ -22,10 +23,13 @@ if ($_GET['petID']) {
             <td>" . $description . "</td>
             <td>" . $hobbies . "</td>
             <td>" . $address . "</td>
+            <td><a href='../adopt.php?petID=" . $_GET['petID'] . "'><button class='btn btn-success w-100' type='button'>Take me home</button></a>
+            <a href='../home.php'><button class='btn btn-warning w-100 mt-1' type='button'>Back</button></a>
             </tr>";
     } else {
         header("location: ../error.php");
     }
+
     mysqli_close($connect);
 } else {
     header("location: ../error.php");
@@ -58,10 +62,6 @@ if ($_GET['petID']) {
         tr {
             text-align: center;
         }
-
-        .custom {
-            width: 135px;
-        }
     </style>
 </head>
 
@@ -78,6 +78,7 @@ if ($_GET['petID']) {
                     <th style='padding-top: 2vh; padding-bottom: 2vh; font-size: large'>Description</th>
                     <th style='padding-top: 2vh; padding-bottom: 2vh; font-size: large'>Hobbies</th>
                     <th style='padding-top: 2vh; padding-bottom: 2vh; font-size: large'>Address</th>
+                    <th style='padding-top: 2vh; padding-bottom: 2vh; font-size: large'>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,8 +86,8 @@ if ($_GET['petID']) {
             </tbody>
         </table>
         <div class='mb-3 d-flex justify-content-end'>
-            <a href="../home.php"><button class='btn btn-success custom me-1' type="button">Take me home</button></a>
-            <a href="../home.php"><button class='btn btn-warning custom' type="button">Back</button></a>
+
+
 
         </div>
     </div>
