@@ -3,6 +3,20 @@ session_start();
 
 require_once 'components/db_connect.php';
 
+// if session is not set this will redirect to login page
+if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+//if session user exist it shouldn't access home.php
+if (isset($_SESSION["user"])) {
+    header("Location: home.php");
+    exit;
+}
+
+
+
+
 $sql = "SELECT * FROM animals";
 $result = mysqli_query($connect, $sql);
 $tbody = ''; //this variable will hold the body for the table

@@ -1,3 +1,18 @@
+<?php
+session_start();
+require_once '../components/db_connect.php';
+
+if (isset($_SESSION['user']) != "") {
+    header("Location: ../home.php");
+    exit;
+}
+
+if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
+    header("Location: ../dashboard.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +20,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once '../components/boot.php' ?>
+
+
     <title>Add animal</title>
     <style>
         fieldset {

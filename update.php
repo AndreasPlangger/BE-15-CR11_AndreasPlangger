@@ -2,6 +2,7 @@
 session_start();
 require_once 'components/db_connect.php';
 require_once 'components/file_upload.php';
+
 // if session is not set this will redirect to login page
 if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
     header("Location: login.php");
@@ -19,8 +20,8 @@ if (isset($_SESSION["adm"])) {
 }
 
 //fetch and populate form
-if (isset($_GET['userID'])) {
-    $id = $_GET['userID'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
     $sql = "SELECT * FROM users WHERE userID = {$id}";
     $result = mysqli_query($connect, $sql);
     if (mysqli_num_rows($result) == 1) {
@@ -45,16 +46,23 @@ if (isset($_POST["submit"])) {
     $phone = $_POST['phone'];
     $password = $_POST['password'];
     $id = $_POST['userID'];
+
+
+
     //variable for upload pictures errors is initialized
     $uploadError = '';
     $pictureArray = file_upload($_FILES['picture']); //file_upload() called
     $picture = $pictureArray->fileName;
+
+
+
     if ($pictureArray->error === 0) {
         ($_POST["picture"] == "avatar.png") ?: unlink("pictures/{$_POST["picture"]}");
-        $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', address = '$address', email = '$email', phone = '$phone', $password = 'password', picture = '$pictureArray->fileName' WHERE userID = {$id}";
+        $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', address = '$address', email = '$email', phone = '$phone', password ='$password', picture = '$pictureArray->fileName' WHERE userID = {$id}";
     } else {
-        $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', address = '$address', email = '$email', phone = '$phone', $password = 'password' WHERE userID = {$id}";
+        $sql = "UPDATE users SET first_name = '$f_name', last_name = '$l_name', address = '$address', email = '$email', phone = '$phone', password = '$password'  WHERE userID = {$id}";
     }
+
     if (mysqli_query($connect, $sql) === true) {
         $class = "alert alert-success";
         $message = "The record was successfully updated";

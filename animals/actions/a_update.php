@@ -1,27 +1,39 @@
 <?php
+session_start();
 require_once '../../components/db_connect.php';
 require_once '../../components/file_upload.php';
 
+if (isset($_SESSION['user']) != "") {
+    header("Location: ../../home.php");
+    exit;
+}
+
+if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
+    header("Location: ../../dashboard.php");
+    exit;
+}
+
 if ($_POST) {
     $name = $_POST['pet_name'];
-    $breed = $data['breed'];
-    $size = $data['size'];
-    $age = $data['age'];
-    $description = $data['pet_description'];
-    $hobbies = $data['hobbies'];
-    $address = $data['pet_address'];
-    $picture = $data['picture'];
+    $breed = $_POST['breed'];
+    $size = $_POST['size'];
+    $age = $_POST['age'];
+    $description = $_POST['pet_description'];
+    $hobbies = $_POST['hobbies'];
+    $address = $_POST['pet_address'];
+    $picture = $_POST['picture'];
     $id = $_POST['petID'];
     //variable for upload pictures errors is initialised
     $uploadError = '';
 
-    $picture = file_upload($_FILES['picture']); //file_upload() called  
-    if ($picture->error === 0) {
-        ($_POST["picture"] == "product.png") ?: unlink("../../pictures/$_POST[picture]");
-        $sql = "UPDATE animals SET name = '$name', '$breed', '$size', age = $age, '$description', '$hobbies', '$address', picture = '$picture->fileName' WHERE petID = {$id}";
+    $picture = file_upload($_FILES['picture'], "animal"); //file_upload() called  
+    if ($picture->error == 0) {
+        ($_POST["picture"] == "avatar.png") ?: unlink("../../pictures/$_POST[picture]");
+        $sql = "UPDATE animals SET pet_name = '$name', breed = '$breed', size = '$size', age = $age, pet_description ='$description', hobbies = '$hobbies', pet_address = '$address', picture = '$picture->fileName' WHERE petID = {$id}";
     } else {
-        $sql = "UPDATE animals SET name = '$name', '$breed', '$size', age = $age, '$description', '$hobbies', '$address' WHERE petID = {$id}";
+        $sql = "UPDATE animals SET pet_name = '$name', breed = '$breed', size ='$size', age = $age, pet_description ='$description', hobbies ='$hobbies', pet_address= '$address' WHERE petID = {$id}";
     }
+
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
         $message = "The record was successfully updated";

@@ -1,4 +1,17 @@
 <?php
+session_start();
+
+if (isset($_SESSION['user']) != "") {
+    header("Location: ../home.php");
+    exit;
+}
+
+if (!isset($_SESSION['adm']) && !isset($_SESSION['user'])) {
+    header("Location: ../dashboard.php");
+    exit;
+}
+
+
 require_once '../components/db_connect.php';
 
 if ($_GET['petID']) {
